@@ -1,3 +1,42 @@
 <resources>
-    <string name="app_name">Teambuilder</string>
+    <string name="app_name">Team Builder</string>
+    <!-- Types de sports -->
+    <string-array name="sports">
+        <item>Football</item>
+        <item>Tennis</item>
+        <item>Equitation</item>
+        <item>Judo</item>
+        <item>Basket-ball</item>
+        <item>Handball</item>
+        <item>Rugby</item>
+        <item>Golf</item>
+        <item>Voile</item>
+        <item>Natation</item>
+        <item>Athletisme</item>
+    </string-array>
+
+    <!-- Type de poste -->
+    <string-array name="poste">
+        <item>Attaquant</item>
+        <item>Defenseur</item>
+    </string-array>
+
+    <!-- Type de Geographie -->
+    <string-array name="geo">
+        <item>Departementale</item>
+        <item>Regionale</item>
+        <item>Nationale</item>
+    </string-array>
+
+    <!-- Type de Sexe -->
+    <string-array name="sexes">
+        <item>Homme</item>
+        <item>Femme</item>
+    </string-array>
+
+    <!-- Sportif  -->
+    <string name="recherche_offre">Recherche d\'offre</string>
+    <string name="video_demonstrative">Ajouter une video demonstrative</string>
+    <string name="age">Age</string>
+
 </resources>
