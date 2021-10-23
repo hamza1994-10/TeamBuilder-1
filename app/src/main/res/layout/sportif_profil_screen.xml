@@ -1,30 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <net.steamcrafted.materialiconlib.MaterialIconView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/profileUser"
+            app:layout_constraintTop_toTopOf="@+id/profileUser"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/black"
+            app:materialIconColor="#fff"
+            app:materialIconSize="24dp"
+            app:materialIcon="pencil" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profil_picture"
+            app:layout_constraintBottom_toBottomOf="@+id/profileUser"
+            app:layout_constraintEnd_toEndOf="@+id/profileUser"
+            app:layout_constraintStart_toStartOf="@+id/profileUser"
+            app:layout_constraintTop_toTopOf="@+id/profileUser" />
+        <ImageView
+            android:id="@+id/profileUser"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/round_blue_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <net.steamcrafted.materialiconlib.MaterialIconView
+            android:id="@+id/materialIconView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/sportSpinner"
+            app:layout_constraintEnd_toStartOf="@+id/sportSpinner"
+            app:layout_constraintTop_toTopOf="@+id/sportSpinner"
+            app:materialIcon="tennis" />
+
         <Spinner
             android:id="@+id/sportSpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:padding="5dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileUser" />
+
+        <net.steamcrafted.materialiconlib.MaterialIconView
+            android:id="@+id/materialIconView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/posteSpinner"
+            app:layout_constraintEnd_toStartOf="@+id/posteSpinner"
+            app:layout_constraintTop_toTopOf="@+id/posteSpinner"
+            app:materialIcon="pin" />
         <Spinner
             android:id="@+id/posteSpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:padding="5dp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sportSpinner"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <net.steamcrafted.materialiconlib.MaterialIconView
+            android:id="@+id/materialIconView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/geoSpinner"
+            app:layout_constraintEnd_toStartOf="@+id/geoSpinner"
+            app:layout_constraintTop_toTopOf="@+id/geoSpinner"
+            app:materialIcon="target" />
         <Spinner
             android:id="@+id/geoSpinner"
             android:layout_width="wrap_content"
@@ -34,6 +97,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/posteSpinner"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <net.steamcrafted.materialiconlib.MaterialIconView
+            android:id="@+id/materialIconView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/sexeSpinner"
+            app:layout_constraintEnd_toStartOf="@+id/sexeSpinner"
+            app:layout_constraintTop_toTopOf="@+id/sexeSpinner"
+            app:materialIcon="gender_male" />
         <Spinner
             android:id="@+id/sexeSpinner"
             android:layout_width="wrap_content"
@@ -45,6 +118,51 @@
             app:layout_constraintTop_toBottomOf="@id/geoSpinner"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/age"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextAge"
+            app:layout_constraintEnd_toStartOf="@+id/editTextAge"
+            app:layout_constraintTop_toTopOf="@+id/editTextAge" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextAge"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sexeSpinner" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recherche_offre"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/switchOfferLooking"
+            app:layout_constraintEnd_toStartOf="@+id/switchOfferLooking"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAge" />
+
+        <Switch
+            android:id="@+id/switchOfferLooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAge" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/video_demonstrative"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchOfferLooking" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
