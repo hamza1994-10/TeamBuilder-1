@@ -39,5 +39,10 @@
     <string name="video_demonstrative">Ajouter une video demonstrative</string>
     <string name="age">Age</string>
     <string name="profil_picture">Photo de profil</string>
+    <string name="update_success">Mise à jour du profil effectuée</string>
+    <string name="update_faile">Un probleme est intervenu dans la mise à jour du profil</string>
+
+    <!-- Generic -->
+    <string name="valider">Valider</string>
 
 </resources>
