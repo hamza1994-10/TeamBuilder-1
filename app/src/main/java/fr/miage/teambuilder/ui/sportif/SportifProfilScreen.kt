@@ -20,17 +20,26 @@ class SportifProfilScreen : AppCompatActivity() {
 
     private val viewModel: SportifProfilViewModel by viewModels()
 
+    lateinit var sportsSpinner: Spinner
+    lateinit var posteSpinner: Spinner
+    lateinit var geoSpinner: Spinner
+    lateinit var sexeSpinner: Spinner
+    lateinit var ageTextField: TextInputEditText
+    lateinit var toggle: Switch
+    lateinit var validateButton: Button
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sportif_profil_screen)
 
-        val sportsSpinner: Spinner = findViewById(R.id.sportSpinner)
-        val posteSpinner: Spinner = findViewById(R.id.posteSpinner)
-        val geoSpinner: Spinner = findViewById(R.id.geoSpinner)
-        val sexeSpinner: Spinner = findViewById(R.id.sexeSpinner)
-        val ageTextField: TextInputEditText = findViewById(R.id.editTextAge)
-        val toggle: Switch = findViewById(R.id.switchOfferLooking)
-        val validateButton: Button = findViewById(R.id.validate)
+        sportsSpinner = findViewById(R.id.sportSpinner)
+         posteSpinner = findViewById(R.id.posteSpinner)
+         geoSpinner = findViewById(R.id.geoSpinner)
+         sexeSpinner = findViewById(R.id.sexeSpinner)
+         ageTextField = findViewById(R.id.editTextAge)
+         toggle = findViewById(R.id.switchOfferLooking)
+         validateButton = findViewById(R.id.validate)
 
        SpinnerManager.setAdaptaterSpinner(this, R.array.sports, sportsSpinner)
         SpinnerManager.setAdaptaterSpinner(this, R.array.poste, posteSpinner)
@@ -49,7 +58,15 @@ class SportifProfilScreen : AppCompatActivity() {
         })
 
         validateButton.setOnClickListener {
-            viewModel.updateSportifProfil()
+
+            val sportPratique = sportsSpinner.selectedItem.toString()
+            val postePratique = posteSpinner.selectedItem.toString()
+            val region = geoSpinner.selectedItem.toString()
+            val sexe = sexeSpinner.selectedItem.toString()
+            val age = ageTextField.text.toString()
+            val rechercheActive = toggle.isChecked
+
+            viewModel.updateSportifProfil(sportPratique =  sportPratique, poste =  postePratique, region = region, genre = sexe, age = age, rechercheActive = rechercheActive)
         }
     }
 

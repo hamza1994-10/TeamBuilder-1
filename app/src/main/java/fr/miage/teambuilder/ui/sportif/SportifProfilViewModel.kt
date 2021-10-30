@@ -14,7 +14,8 @@ class SportifProfilViewModel @Inject constructor(): ViewModel() {
     public val ldScreenState = mlScreenState
 
     // MAJ du profil du sportif
-    fun updateSportifProfil() = viewModelScope.launch {
+    fun updateSportifProfil(sportPratique: String, poste: String, region: String, genre: String, age: String, rechercheActive: Boolean) = viewModelScope.launch {
+        println("$sportPratique $poste $region $genre $age $rechercheActive")
     }
 
 

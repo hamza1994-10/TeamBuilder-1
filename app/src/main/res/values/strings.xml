@@ -44,5 +44,7 @@
 
     <!-- Generic -->
     <string name="valider">Valider</string>
+    <string name="accepter">Accepter</string>
+    <string name="refuser">Refuser</string>
 
 </resources>

@@ -1,0 +1,53 @@
+package fr.miage.teambuilder.ui.home
+
+import android.os.Bundle
+import android.view.View
+import android.widget.LinearLayout
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.button.MaterialButton
+import dagger.hilt.android.AndroidEntryPoint
+import fr.miage.teambuilder.R
+import fr.miage.teambuilder.enums.UserType
+
+@AndroidEntryPoint
+class HomeScreen  : AppCompatActivity() {
+
+    val viewModel: HomeViewModel by viewModels()
+
+    lateinit var acceptButton: MaterialButton
+    lateinit var refuseButton: MaterialButton
+    lateinit var sportifProfil: LinearLayout
+    lateinit var clubProfil: LinearLayout
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.club_sportif_profil)
+
+        acceptButton = findViewById(R.id.buttonAccept)
+        refuseButton = findViewById(R.id.buttonRefuse)
+        sportifProfil = findViewById(R.id.sportifDetail)
+        clubProfil = findViewById(R.id.equipeDetail)
+
+//        val userType = intent.getSerializableExtra("userType")
+//        if(userType == UserType.CLUB){
+//            sportifProfil.visibility = View.GONE
+//            clubProfil.visibility = View.VISIBLE
+//        }
+//        else{
+//            sportifProfil.visibility = View.VISIBLE
+//            clubProfil.visibility = View.GONE
+//        }
+
+
+        acceptButton.setOnClickListener {
+
+        }
+
+        refuseButton.setOnClickListener {
+
+        }
+
+
+    }
+}
