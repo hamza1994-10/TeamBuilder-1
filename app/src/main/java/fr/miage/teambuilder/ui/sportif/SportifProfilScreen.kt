@@ -7,8 +7,6 @@ import android.widget.Switch
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SwitchCompat
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
 import fr.miage.teambuilder.R
@@ -28,13 +26,13 @@ class SportifProfilScreen : AppCompatActivity() {
         val posteSpinner: Spinner = findViewById(R.id.posteSpinner)
         val geoSpinner: Spinner = findViewById(R.id.geoSpinner)
         val sexeSpinner: Spinner = findViewById(R.id.sexeSpinner)
-        val ageTextField: TextInputEditText = findViewById(R.id.editTextAge)
+        val ageTextField: TextInputEditText = findViewById(R.id.editTeamName)
         val toggle: Switch = findViewById(R.id.switchOfferLooking)
         val validateButton: Button = findViewById(R.id.validate)
 
        SpinnerManager.setAdaptaterSpinner(this, R.array.sports, sportsSpinner)
-        SpinnerManager.setAdaptaterSpinner(this, R.array.poste, posteSpinner)
-        SpinnerManager.setAdaptaterSpinner(this, R.array.geo, geoSpinner)
+   //     SpinnerManager.setAdaptaterSpinner(this, R.array.noPoste, posteSpinner)
+        SpinnerManager.setAdaptaterSpinner(this, R.array.niveau, geoSpinner)
         SpinnerManager.setAdaptaterSpinner(this, R.array.sexes, sexeSpinner)
 
         viewModel.ldScreenState.observe(this, androidx.lifecycle.Observer {
