@@ -3,9 +3,13 @@ package fr.miage.teambuilder.ui.home
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 import fr.miage.teambuilder.R
 import fr.miage.teambuilder.enums.UserType
@@ -20,6 +24,9 @@ class HomeScreen  : AppCompatActivity() {
     lateinit var sportifProfil: LinearLayout
     lateinit var clubProfil: LinearLayout
 
+    private lateinit var auth: FirebaseAuth
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.club_sportif_profil)
@@ -29,15 +36,15 @@ class HomeScreen  : AppCompatActivity() {
         sportifProfil = findViewById(R.id.sportifDetail)
         clubProfil = findViewById(R.id.equipeDetail)
 
-//        val userType = intent.getSerializableExtra("userType")
-//        if(userType == UserType.CLUB){
-//            sportifProfil.visibility = View.GONE
-//            clubProfil.visibility = View.VISIBLE
-//        }
-//        else{
-//            sportifProfil.visibility = View.VISIBLE
-//            clubProfil.visibility = View.GONE
-//        }
+        val userType = intent.getSerializableExtra("userType")
+        if(userType == UserType.CLUB){
+            sportifProfil.visibility = View.GONE
+            clubProfil.visibility = View.VISIBLE
+        }
+        else{
+            sportifProfil.visibility = View.VISIBLE
+            clubProfil.visibility = View.GONE
+        }
 
 
         acceptButton.setOnClickListener {

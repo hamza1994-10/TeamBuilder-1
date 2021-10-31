@@ -13,13 +13,20 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+        </activity>
+        <activity
+            android:name=".ui.signIn.SignInScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".ui.signIn.SignUpScreen"
+            android:exported="true">
+        </activity>
         <activity
             android:name="fr.miage.teambuilder.ui.user.SettingsScreen"
             android:exported="true">
@@ -36,7 +43,7 @@
         </activity>
 
         <activity
-            android:name="fr.miage.teambuilder.ui.club.ClubProfilScreen"
+            android:name="fr.miage.teambuilder.ui.home.HomeScreen"
             android:exported="true">
         </activity>
 

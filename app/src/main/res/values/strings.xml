@@ -15,6 +15,12 @@
         <item>Athletisme</item>
     </string-array>
 
+    <!-- Types d'utilisateurs -->
+    <string-array name="userType">
+        <item>Club</item>
+        <item>Sportif</item>
+    </string-array>
+
     <!-- Type de poste -->
     <string-array name="poste">
         <item>Attaquant</item>
@@ -47,4 +53,21 @@
     <string name="accepter">Accepter</string>
     <string name="refuser">Refuser</string>
 
+    <!-- Sign in -->
+    <string name="sign_in_email">Email</string>
+    <string name="sign_in_password">Mot de passe</string>
+    <string name="sign_in_connexion">Connexion</string>
+    <string name="sign_in_incorrect_input">Attention vous devez saisir un email et un mot de passe</string>
+    <string name="sign_in_success_sign_in">Connexion réussie</string>
+
+    <!-- Sign Up -->
+    <string name="sign_up_inscription">Inscription</string>
+    <string name="sign_up_email">Email</string>
+    <string name="sign_up_nom">Nom</string>
+    <string name="sign_up_prenom">Prenom</string>
+    <string name="sign_up_password">Mot de passe</string>
+    <string name="sign_up_confirm_password">Confirmer votre mot de passe</string>
+    <string name="sign_up_user_type">Je suis</string>
+    <string name="sign_up_success">"Inscription réussie</string>
+    <string name="sign_up_incorrect_input">Attention tous vos champs ne sont pas valides</string>
 </resources>
