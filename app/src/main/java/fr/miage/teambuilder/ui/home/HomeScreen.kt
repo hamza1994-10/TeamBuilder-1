@@ -36,6 +36,8 @@ class HomeScreen  : AppCompatActivity() {
         sportifProfil = findViewById(R.id.sportifDetail)
         clubProfil = findViewById(R.id.equipeDetail)
 
+        viewModel.getSportif()
+
         val userType = intent.getSerializableExtra("userType")
         if(userType == UserType.CLUB){
             sportifProfil.visibility = View.GONE
