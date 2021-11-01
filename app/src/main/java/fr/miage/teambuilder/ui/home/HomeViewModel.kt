@@ -6,6 +6,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import fr.miage.teambuilder.models.dao.SportifEntity
 import fr.miage.teambuilder.repository.ClubRepository
 import fr.miage.teambuilder.repository.EquipeRepository
 import fr.miage.teambuilder.repository.MatchRepository
@@ -23,18 +24,23 @@ class HomeViewModel @Inject constructor(
     ): ViewModel() {
 
 
-    fun getSportif(){
-        viewModelScope.launch {
+    val sportifs = sportifRepository.getSportifs()
+    val club = clubRepository.getClubs()
 
-            //sportifRepository.fetchSportifs()
+   init {
+
+   }
+
+    fun initialisation(){
+        viewModelScope.launch {
+            sportifRepository.fetchSportifs()
             clubRepository.fetchClubs()
             equipeRepository.fetchEquipes()
             matchRepository.fetchMatch()
-
-            //val sportifs = sportifRepository.getSportifs().first()
-            // println(sportifs)
         }
     }
+
+
     fun acceptMatch(){
 
     }

@@ -21,7 +21,6 @@ class SportifRepository @Inject constructor(val sportifDao: SportifDao) {
      suspend fun fetchSportifs() {
          val sportifs = db.collection(FirestoreCollections.SPORTIFS.colectionName).get().await().toObjects(Sportif::class.java)
          sportifDao.insertSportif(sportifs.map { it.toEntity() })
-
     }
 
      fun getSportifs(): Flow<List<SportifEntity>> {
