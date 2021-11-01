@@ -16,10 +16,8 @@ class ClubRepository @Inject constructor(val clubDao: ClubDao) {
     val db = Firebase.firestore
 
     suspend fun fetchClubs() {
-        val clubs = db.collection(FirestoreCollections.EQUIPE.colectionName).get().await().toObjects(
-            Club::class.java)
+        val clubs = db.collection(FirestoreCollections.CLUB.colectionName).get().await().toObjects(Club::class.java)
         clubDao.insertClub(clubs.map { it.toEntity() })
-
     }
 
     fun getClubs(): Flow<List<ClubEntity>> {

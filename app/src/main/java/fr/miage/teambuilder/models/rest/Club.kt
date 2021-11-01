@@ -1,14 +1,16 @@
 package fr.miage.teambuilder.models.rest
 
 import fr.miage.teambuilder.models.dao.ClubEntity
+import java.util.*
+import kotlin.collections.ArrayList
 
-class Club constructor
+data class Club constructor
     (
-    val uid: String,
-    val email: String? = null,
-    val userType: String = "club",
-    val nomClub: String? = null,
-    val equipesUid: ArrayList<String> = arrayListOf()
+    var uid: String? = null,
+    var email: String? = null,
+    var userType: String = "club",
+    var nomClub: String? = null,
+    var equipesUid: ArrayList<String> = arrayListOf()
 ) {
     fun toEntity(): ClubEntity {
         return ClubEntity(
@@ -16,7 +18,7 @@ class Club constructor
             userType = userType,
             nomClub = nomClub,
             equipesUid = equipesUid,
-            uid = uid
+            uid = uid ?: UUID.randomUUID().toString()
         )
     }
 }

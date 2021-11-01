@@ -19,7 +19,6 @@ class MatchRepository @Inject constructor(val matchDao: MatchDao) {
         val matchs = db.collection(FirestoreCollections.MATCH.colectionName).get().await().toObjects(
             Match::class.java)
         matchDao.insertMatchEntities(matchs.map { it.toEntity() })
-
     }
 
     fun getMatchs(): Flow<List<MatchEntity>> {
